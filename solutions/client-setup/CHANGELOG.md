@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.8.2](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-setup/0.8.1...solutions/client-setup/0.8.2) (2024-04-05)
+
+
+### Bug Fixes
+
+* update core dns project setter name ([#919](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/919)) ([0430aa8](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/0430aa8a220a80fdd01ba328646159cca8a6823a))
+
+## [0.8.1](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-setup/0.8.0...solutions/client-setup/0.8.1) (2024-03-21)
+
+
+### Bug Fixes
+
+* adding client folder display name ([#910](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/910)) ([2898126](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/28981264dac258130109b717005fa6c0862f5423))
+
+## [0.8.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-setup/0.7.2...solutions/client-setup/0.8.0) (2024-03-07)
+
+
+### Features
+
+* adding cbrid to client setup package ([#884](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/884)) ([e6d6499](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/e6d649912cd08a8119388660155fab0c9e7ba20f))
+
+## [0.7.2](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-setup/0.7.1...solutions/client-setup/0.7.2) (2024-02-13)
+
+
+### Bug Fixes
+
+* adding security control tags ([#810](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/810)) ([cb877a4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/cb877a4f465135677675f5e3b42a73b324e9827b))
+
 ## [0.7.1](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-setup/0.7.0...solutions/client-setup/0.7.1) (2023-11-23)
 
 

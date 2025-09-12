@@ -54,9 +54,6 @@ This Landing Zone v2 differentiates from the `solutions/landing-zone` mostly bec
 
 ## <a name='Implementation'></a>Implementation
 
-
-You may want to look at the [documentation](https://github.com/ssc-spc-ccoe-cei/gcp-documentation) published by **Shared Services Canada**, providing a good level of details on how they have implemented this landing zone solution to host workloads from any of the 43 departments of the Government of Canada.
-
 ## <a name='Organization'></a>Organization
 
 This Landing Zone v2 assumes that the different required environments known as Experimentation, Development, PreProduction and Production are all instantiated with their own landing zone. This can be achieved with a single GCP organization and multiple landing zone folders representing the environments OR by using multiple GCP organizations.
@@ -99,7 +96,7 @@ This can be deployed once or multiple times per organization as highlighted in t
 
 ### Client Landing Zone
 
-This section is made up of two packages [client-setup](../../solutions/client-setup/) and [client-landing-zone](../../solutions/client-landing-zone/). The client setup package prepares the Config Controller instances for the new client and creates the required service accounts and namespaces for the client to use.
+This section is made up of two packages [client-setup](../../solutions/client-setup/) and [client-landing-zone](../../solutions/client-landing-zone/) described in [Client Onboarding](onboarding-client.md). The client setup package prepares the Config Controller instances for the new client and creates the required service accounts and namespaces for the client to use.
 
 The `client-landing-zone` package deploys the clients Google Cloud resources, including folder structure, firewalls, and Shared Infrastructure (VPC). The deployment of these packages are repeated for each onboarded client. A client in these examples would be an a department or working group that needs isolation from other groups.
 
@@ -118,10 +115,10 @@ It is possible to only have 1 client and service multiple teams and working grou
 To deploy this Landing Zone you will need to:
 
   1. [Complete the bootstrap procedure.](#1-complete-the-bootstrap-procedure)
-  2. [Create your landing zone.](#2-create-your-landing-zone)
-  3. [Deploy the infrastructure using gitops](#deploy-the-infrastructure-using-gitops)
-  4. [Validate the landing zone deployment](#4-validate-the-landing-zone-deployment)
-  5. [Perform the post deployment steps](#5-perform-the-post-deployment-steps)
+  1. [Create your landing zone.](#2-create-your-landing-zone)
+  1. [Deploy the infrastructure using gitops](#deploy-the-infrastructure-using-gitops)
+  1. [Validate the landing zone deployment](#4-validate-the-landing-zone-deployment)
+  1. [Perform the post deployment steps](#5-perform-the-post-deployment-steps)
 
 ### <a name='Completethebootstrapprocedure'></a>1. Complete the bootstrap procedure
 
@@ -171,7 +168,7 @@ To deploy this Landing Zone you will need to:
 
 ### <a name='InitialOrganizationconfiguration'></a>Initial Organization configuration
 
-The following instructions in this section 1 for the boostrap of the Config Controller project and cluster are fully automated in the [setup-kcc.sh](https://github.com/ssc-spc-ccoe-cei/gcp-tools/blob/main/scripts/bootstrap/setup-kcc.sh) script.
+The following instructions in this section 1 for the boostrap of the Config Controller project and cluster are fully automated in the [setup-kcc.sh](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/blob/main/scripts/setup-kcc.sh) script.
 
 1. Define environment variables
 
@@ -221,36 +218,36 @@ The following instructions in this section 1 for the boostrap of the Config Cont
 ### <a name='Option1-Orglevelfolder'></a>Option 1 - Org level folder
 
 ```shell
-    FOLDER_ID=$(gcloud resource-manager folders create --display-name=$LZ_FOLDER_NAME --organization=$ORG_ID --format="value(name)" --quiet | cut -d "/" -f 2)
+FOLDER_ID=$(gcloud resource-manager folders create --display-name=$LZ_FOLDER_NAME --organization=$ORG_ID --format="value(name)" --quiet | cut -d "/" -f 2)
 ```
 
 ### <a name='Option2-FolderinaFolder'></a>Option 2 - Folder in a Folder
 
 ```shell
-    FOLDER_ID=$(gcloud resource-manager folders create --display-name=$LZ_FOLDER_NAME  --folder=$ROOT_FOLDER_ID --format="value(name)" --quiet | cut -d "/" -f 2)
+FOLDER_ID=$(gcloud resource-manager folders create --display-name=$LZ_FOLDER_NAME  --folder=$ROOT_FOLDER_ID --format="value(name)" --quiet | cut -d "/" -f 2)
 ```
 
-2. Create a new project at the org level where we will install the Config Controller instance.
+1. Create a new project at the org level where we will install the Config Controller instance.
 
 ### <a name='Option1-OrglevelProject'></a>Option 1 - Org level Project
 
 ```shell
-    gcloud projects create $PROJECT_ID --set-as-default --organization=$ORG_ID
+gcloud projects create $PROJECT_ID --set-as-default --organization=$ORG_ID
 ```
 
 ### <a name='Option2-ProjectinaFolder'></a>Option 2 - Project in a Folder
 
 ```shell
-    gcloud projects create $PROJECT_ID --set-as-default --folder=$ROOT_FOLDER_ID
+gcloud projects create $PROJECT_ID --set-as-default --folder=$ROOT_FOLDER_ID
 ```
 
 1. Enable Billing
 
-```shell
+    ```shell
     gcloud beta billing projects link $PROJECT_ID --billing-account $BILLING_ID
-```
+    ```
 
-2. Set the project ID
+1. Set the project ID
 
     ```shell
     gcloud config set project $PROJECT_ID
@@ -354,13 +351,14 @@ The following instructions in this section 1 for the boostrap of the Config Cont
 ### <a name='GKEAutopilot-Fullymanagedcluster'></a>GKE Autopilot - Fully managed cluster
 
 ```shell
-    gcloud anthos config controller create $CLUSTER --location $REGION --network $NETWORK --subnet $SUBNET --master-ipv4-cidr-block="172.16.0.128/28" --full-management
+gcloud anthos config controller create $CLUSTER --location $REGION --network $NETWORK --subnet $SUBNET --master-ipv4-cidr-block="172.16.0.128/28" --full-management
 ```
 
 ### <a name='GKEStandard'></a>GKE Standard
 Optional
+
 ```shell
-    gcloud anthos config controller create $CLUSTER --location $REGION --network $NETWORK --subnet $SUBNET
+gcloud anthos config controller create $CLUSTER --location $REGION --network $NETWORK --subnet $SUBNET
 ```
 
 ### <a name='GKECredentials'></a>GKE Credentials
@@ -424,7 +422,7 @@ cd pbmm-landingzone
 
    All Gatekeeper Policy Package releases can be found [here](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/releases?q=gatekeeper&expanded=true)
 
-2. Get the core landing zone package
+1. Get the core landing zone package
 
     - Experimentation
 
@@ -448,56 +446,58 @@ cd pbmm-landingzone
 
       [Releases List](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/releases?q=core-landing-zone&expanded=true)
 
-3. Customize Packages
+1. Customize Packages
+
+    > **!!! Important** !!! PLEASE DON'T SKIP or IGNORE THIS STEP!
 
     Review and customize all packages' `setters.yaml` with the unique configuration of your landing zone.
     For example "core-landing-zone" will have the same [setters.yaml](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/blob/main/solutions/core-landing-zone/setters.yaml) as in the repo in the root of the pkg directory.
 
 ### <a name='deploy-the-infrastructure-using-kpt'></a>2b. Deploy the infrastructure using KPT
-This section is an optional dev-oriented alternative to the GitOps approach (which is recommended for production deployments) in the following section 3.
+This section is an optional dev-oriented alternative to the GitOps](#3-deploy-the-infrastructure-using-gitops) approach (which is recommended for production deployments) in the following section 3.
 
 #### <a name='gatekeeper-policies-kpt'></a>gatekeeper-policies
 Optional
 
 #### <a name='core-landing-zone-kpt'></a>core-landing-zone
 
-  1. initialize the package
+1. initialize the package
 
-```shell
-kpt live init core-landing-zone --namespace config-control
-```
+    ```shell
+    kpt live init core-landing-zone --namespace config-control
+    ```
 
-  1. apply / hydrate the templated package with setters.yaml values - where kpt-set values are replaced
+1. apply / hydrate the templated package with setters.yaml values - where kpt-set values are replaced
 
-```shell
-kpt fn render core-landing-zone
-```
+    ```shell
+    kpt fn render core-landing-zone
+    ```
 
-  1. Apply the hydrated kubernetes yaml to the cluster
+1. Apply the hydrated kubernetes yaml to the cluster
 
-```shell
-kpt live apply core-landing-zone --reconcile-timeout=2m --output=table
-```
+    ```shell
+    kpt live apply core-landing-zone --reconcile-timeout=15m --output=table
+    ```
 
-  1. Check the status of the deployed resources
+1. Check the status of the deployed resources
 
-```shell
-kpt live status core-landing-zone
-```
+    ```shell
+    kpt live status core-landing-zone
+    ```
 
-  1. Check the status of the deployed services on the cluster
+1. Check the status of the deployed services on the cluster
 
-```shell
-kubectl get gcp --all-namespaces
-```
+    ```shell
+    kubectl get gcp --all-namespaces
+    ```
 
-or a specific namespace
+    or a specific namespace
 
-```shell
-kubectl get gcp -n projects
-```
+    ```shell
+    kubectl get gcp -n projects
+    ```
 
-Repeat the above process with additional solutions packages.
+    Repeat the above process with additional solutions packages.  Follow instructions in [Client Onboarding](onboarding-client.md).
 
 
 ## <a name='deploy-the-infrastructure-using-gitops'></a>3. Deploy the infrastructure using GitOps
@@ -507,7 +507,7 @@ Repeat the above process with additional solutions packages.
 
    To start you will need a git repo, this guide can be used with repositories residing in Github, Gitlab or Azure Devops. The instructions have been modified from the config controller setup guide located in [Manage Google Cloud resources with Config Controller](https://cloud.google.com/anthos-config-management/docs/how-to/config-controller-setup#manage-resources) and [Setup GitOps](https://cloud.google.com/anthos-config-management/docs/how-to/config-controller-setup#set_up_gitops).
 
-   ***Skip this step if not using git repos.**
+   ***Skip this step if not using git repos.***
 
 ### <a name='CreateanewrepositoryinyourRepoHostingSolutionGithubGitlaborAzureDevops'></a>Create a new repository in your Repo Hosting Solution (Github, Gitlab or Azure Devops)
 
@@ -688,7 +688,7 @@ Execute the client onboarding [procedure](onboarding-client.md).
 
 Follow the below steps to delete the provisioned infrastructure and Config Controller instances.
 
-If you want the deployed resources to live on and just destroy the Config Controller instance you can do so by running `gcloud anthos config controller instance-name --location instance-region`. This will remove the config controller instances but leave the resources it deployed untouched.
+If you want the deployed resources to live on and just destroy the Config Controller instance you can do so by running `gcloud anthos config controller delete --location instance-region instance-name`. This will remove the config controller instances but leave the resources it deployed untouched.
 
 To reacquire the resources you will need to redeploy a new instance and deploy the same configs to it. Config Controller should reattach to the previously deployed instances and start managing them again.
 
@@ -698,19 +698,21 @@ To reacquire the resources you will need to redeploy a new instance and deploy t
 First delete the Rootsync deployment. This will prevent the resources from self-healing.
 
 ```shell
-kubectl delete root-sync landing-zone -n config-management-system
+kubectl delete RootSync root-sync -n config-management-system
 ```
 
-Now we can delete our KCC resources from the Config Controller instance.
+Now we can delete our KCC resources solution by solution in a reverse order of initial solution deployments from the Config Controller instance (assuming either you still have the local bootstrapping solution folders or you have checked those solution folders out from your git repository, and you run the below commands at the parent folder of those solution folders).
 
 ```shell
-kubectl delete gcp --all
+# kpt live destroy <solution_folder_path>
+kpt live destroy core-landing-zone
+kpt live destroy gatekeeper-policies # Optional
 ```
 
-Once the resources have been deleted you can delete the config controller instance .
+Once all solution's resources have been deleted you can delete the config controller instance.
 
-If you have forgotten the name of the instance you can run `gcloud anthos config controller list` to reveal the instances in your current project.
+If you have forgotten the name of the instance you can run `gcloud anthos config controller list` to reveal the instances in your project and then replace the corresponding environment variables from the below command with your actual values. If you are still in the same deploymemt session with the environment variables available, please directly run the below command.
 
 ```shell
-gcloud anthos config controller delete instance-name --location instance-region
+gcloud anthos config controller delete $CLUSTER --location $REGION
 ```

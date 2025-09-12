@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.5](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-setup/0.2.4...solutions/gke/configconnector/gke-setup/0.2.5) (2024-02-13)
+
+
+### Bug Fixes
+
+* adding security control tags ([#810](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/810)) ([cb877a4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/cb877a4f465135677675f5e3b42a73b324e9827b))
+
+## [0.2.4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-setup/0.2.3...solutions/gke/configconnector/gke-setup/0.2.4) (2023-12-19)
+
+
+### Bug Fixes
+
+* removing data access config from gke-setup ([#763](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/763)) ([08e8168](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/08e81683917948e0111b662074f429eb8ce300d1))
+
 ## [0.2.3](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-setup/0.2.2...solutions/gke/configconnector/gke-setup/0.2.3) (2023-11-16)
 
 

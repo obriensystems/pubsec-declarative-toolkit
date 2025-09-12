@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.1.5](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-admin-proxy/0.1.4...solutions/gke/configconnector/gke-admin-proxy/0.1.5) (2024-02-13)
+
+
+### Bug Fixes
+
+* adding security control tags ([#810](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/810)) ([cb877a4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/cb877a4f465135677675f5e3b42a73b324e9827b))
+
+## [0.1.4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-admin-proxy/0.1.3...solutions/gke/configconnector/gke-admin-proxy/0.1.4) (2024-01-26)
+
+
+### Bug Fixes
+
+* update setter and iam resources ([#789](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/789)) ([603f556](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/603f5560033c86b523123505e42620e5d0277c34))
+
+## [0.1.3](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-admin-proxy/0.1.2...solutions/gke/configconnector/gke-admin-proxy/0.1.3) (2023-12-19)
+
+
+### Bug Fixes
+
+* tagging au-12 controls ([#765](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/765)) ([a3108f6](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/a3108f696f3b51db5a95e69e76a0a3db49dc7bc6))
+
 ## [0.1.2](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-admin-proxy/0.1.1...solutions/gke/configconnector/gke-admin-proxy/0.1.2) (2023-10-31)
 
 

@@ -22,13 +22,11 @@ loaded in the config controller.
 
 |       Name       |           Value           | Type  | Count |
 |------------------|---------------------------|-------|-------|
-| certificate-id   |                  12345678 | int   |     1 |
 | certificate-name | certificate-name          | str   |     3 |
 | client-name      | client1                   | str   |     8 |
 | dns-project-id   | dns-project-id            | str   |     1 |
 | domains          | [example.com]             | array |     1 |
 | gateway-name     | gateway-name              | str   |     3 |
-| host-project-id  | host-project-12345        | str   |     0 |
 | metadata-name    | metadata-name             | str   |     1 |
 | project-id       | project-12345             | str   |    12 |
 | spec-name        | dns-name                  | str   |     1 |

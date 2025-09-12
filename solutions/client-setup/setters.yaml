@@ -67,6 +67,10 @@ data:
   # customization: required
   client-name: 'client1'
   #
+  # Client folder display name
+  # customization: required
+  client-folder-display-name: client-folder-display-name
+  #
   # Client's Billing Account ID to associate with the client's management project. The projects-sa will need billing user role permission granted.
   # alternatively, because the client management project contains very limited resources, it could be set to the core-landing-zone billing id (the projects-sa should already have permissions set during initial post deployment configurations)
   # customization: required
@@ -104,8 +108,12 @@ data:
   #
   # dns project id created during core-landing-zone package deployment
   # customization: required, obtain value from the core-landing-zone setters.yaml
-  dns-project-id: dns-project-12345
+  core-dns-project-id: core-dns-project-12345
   #
+  ##########################
+  # Labels
+  ##########################
+  # Labels can be set on project using set-labels-project.yaml. Please make sure there is one pair of key-value pair otherwise render will fail
   ##########################
   # End of Configurations
   ##########################

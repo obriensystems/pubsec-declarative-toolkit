@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.4.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/kubernetes/cluster-defaults/0.3.3...solutions/gke/kubernetes/cluster-defaults/0.4.0) (2024-03-13)
+
+
+### Features
+
+* Update cluster defaults package with network policies ([#866](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/866)) ([2bfcd83](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/2bfcd83dd1815505e522890c1b636601d16878be))
+
+## [0.3.3](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/kubernetes/cluster-defaults/0.3.2...solutions/gke/kubernetes/cluster-defaults/0.3.3) (2024-02-13)
+
+
+### Bug Fixes
+
+* adding security control tags ([#810](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/810)) ([cb877a4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/cb877a4f465135677675f5e3b42a73b324e9827b))
+
+## [0.3.2](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/kubernetes/cluster-defaults/0.3.1...solutions/gke/kubernetes/cluster-defaults/0.3.2) (2023-12-19)
+
+
+### Bug Fixes
+
+* tagging au-12 controls ([#765](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/765)) ([a3108f6](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/a3108f696f3b51db5a95e69e76a0a3db49dc7bc6))
+
 ## [0.3.1](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/kubernetes/cluster-defaults/0.3.0...solutions/gke/kubernetes/cluster-defaults/0.3.1) (2023-11-01)
 
 

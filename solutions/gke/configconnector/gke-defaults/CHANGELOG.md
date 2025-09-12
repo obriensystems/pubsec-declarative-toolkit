@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-defaults/0.2.3...solutions/gke/configconnector/gke-defaults/0.3.0) (2024-03-13)
+
+
+### Features
+
+* distinct VPC host prep gke-defaults ([#892](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/892)) ([15bf768](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/15bf76893ca501b87ce2ccaca698c3db9417b618))
+
+## [0.2.3](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-defaults/0.2.2...solutions/gke/configconnector/gke-defaults/0.2.3) (2024-02-13)
+
+
+### Bug Fixes
+
+* adding security control tags ([#810](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/810)) ([cb877a4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/cb877a4f465135677675f5e3b42a73b324e9827b))
+
 ## [0.2.2](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/gke/configconnector/gke-defaults/0.2.1...solutions/gke/configconnector/gke-defaults/0.2.2) (2023-11-07)
 
 

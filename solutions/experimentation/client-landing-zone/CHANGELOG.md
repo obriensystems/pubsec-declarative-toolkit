@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.1.5](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/experimentation/client-landing-zone/0.1.4...solutions/experimentation/client-landing-zone/0.1.5) (2024-03-13)
+
+
+### Bug Fixes
+
+* adding a setters for client-folder-display-name into the experimentation/client-landing-zone package ([#898](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/898)) ([ee1e954](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/ee1e9540f1ed5e30d72a5e421daec22139b4fd88))
+
+## [0.1.4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/experimentation/client-landing-zone/0.1.3...solutions/experimentation/client-landing-zone/0.1.4) (2024-02-05)
+
+
+### Bug Fixes
+
+* updating setters formatting and comments ([#815](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/815)) ([c105800](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/c1058007aaa72b8ffbce000ef5575cc494db0e33))
+
+## [0.1.3](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/experimentation/client-landing-zone/0.1.2...solutions/experimentation/client-landing-zone/0.1.3) (2024-02-05)
+
+
+### Bug Fixes
+
+* Removing securitycontrols.md and security control tags from experimentation ([#811](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/811)) ([f17ff29](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/f17ff29a8ff5d3b0f5c955d5d1f8843ba0723829))
+
 ## [0.1.2](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/experimentation/client-landing-zone/0.1.1...solutions/experimentation/client-landing-zone/0.1.2) (2023-11-23)
 
 

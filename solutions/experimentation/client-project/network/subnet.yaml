@@ -13,14 +13,12 @@
 # limitations under the License.
 #########
 ##################################
-# AC-4 Information flow enforcement - Subnet creation to segregate and force through ZIP for access
 ##################################
 # All subnets have :
 # - logging enabled for flow logs https://cloud.google.com/vpc/docs/using-flow-logs
 # - private google access enabled https://cloud.google.com/vpc/docs/private-google-access
 ##################################
 # Subnet PAZ northamerica-northeast1
-# SC-7 BOUNDARY PROTECTION
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeSubnetwork
 metadata:
@@ -43,7 +41,6 @@ spec:
     metadata: INCLUDE_ALL_METADATA
 ---
 # Subnet APPRZ northamerica-northeast1
-# SC-7 BOUNDARY PROTECTION
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeSubnetwork
 metadata:
@@ -66,7 +63,6 @@ spec:
     metadata: INCLUDE_ALL_METADATA
 ---
 # Subnet DATARZ northamerica-northeast1
-# SC-7 BOUNDARY PROTECTION
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeSubnetwork
 metadata:
@@ -89,7 +85,6 @@ spec:
     metadata: INCLUDE_ALL_METADATA
 ---
 # Subnet PAZ northamerica-northeast2
-# SC-7 BOUNDARY PROTECTION
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeSubnetwork
 metadata:
@@ -112,7 +107,6 @@ spec:
     metadata: INCLUDE_ALL_METADATA
 ---
 # Subnet APPRZ northamerica-northeast2
-# SC-7 BOUNDARY PROTECTION
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeSubnetwork
 metadata:
@@ -135,7 +129,6 @@ spec:
     metadata: INCLUDE_ALL_METADATA
 ---
 # Subnet DATARZ northamerica-northeast2
-# SC-7 BOUNDARY PROTECTION
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeSubnetwork
 metadata:

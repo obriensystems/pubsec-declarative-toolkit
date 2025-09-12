@@ -1,5 +1,47 @@
 # Changelog
 
+## [0.8.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-landing-zone/0.7.1...solutions/client-landing-zone/0.8.0) (2024-04-11)
+
+
+### Features
+
+* distinct vpc remove legacy resources BREAKING CHANGE ([#922](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/922)) ([824f7c2](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/824f7c2bc0143c42b7bbe2fd9605e744915ed5c7))
+
+## [0.7.1](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-landing-zone/0.7.0...solutions/client-landing-zone/0.7.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* update to core-dns-project-id for existing resource ([#899](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/899)) ([b8494bf](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/b8494bfe0558de850e9739e8bfc82f47ca4ded2b))
+
+## [0.7.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-landing-zone/0.6.0...solutions/client-landing-zone/0.7.0) (2024-03-12)
+
+
+### Features
+
+* distinct VPC host prep client-landing-zone ([#890](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/890)) ([3e35d31](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/3e35d316a0066ed97d31019068c3477fa9053f7b))
+
+## [0.6.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-landing-zone/0.5.4...solutions/client-landing-zone/0.6.0) (2024-03-04)
+
+
+### Features
+
+* add cbrid to client landing zone ([#876](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/876)) ([42b12a3](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/42b12a3e49a6c4d0408f12d3621b77f8965cce2c))
+
+## [0.5.4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-landing-zone/0.5.3...solutions/client-landing-zone/0.5.4) (2024-02-13)
+
+
+### Bug Fixes
+
+* adding security control tags ([#810](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/810)) ([cb877a4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/cb877a4f465135677675f5e3b42a73b324e9827b))
+
+## [0.5.3](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-landing-zone/0.5.2...solutions/client-landing-zone/0.5.3) (2023-12-19)
+
+
+### Bug Fixes
+
+* tagging au-12 controls ([#765](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/765)) ([a3108f6](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/a3108f696f3b51db5a95e69e76a0a3db49dc7bc6))
+
 ## [0.5.2](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-landing-zone/0.5.1...solutions/client-landing-zone/0.5.2) (2023-11-16)
 
 

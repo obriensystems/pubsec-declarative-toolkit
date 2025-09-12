@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.7.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-project-setup/0.6.0...solutions/client-project-setup/0.7.0) (2024-04-11)
+
+
+### Features
+
+* distinct vpc remove legacy resources BREAKING CHANGE ([#921](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/921)) ([3939041](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/39390414dd567bb631edc50d83bf45eec6b0ea0c))
+
+## [0.6.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-project-setup/0.5.0...solutions/client-project-setup/0.6.0) (2024-03-12)
+
+
+### Features
+
+* distinct VPC host prep client-project-setup ([#891](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/891)) ([ffeaa5e](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/ffeaa5e884ae8da2c71782d4bd2b31336d3e4c98))
+
+## [0.5.0](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-project-setup/0.4.6...solutions/client-project-setup/0.5.0) (2024-03-05)
+
+
+### Features
+
+* adding cbrid to client project setup package ([#879](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/879)) ([2e36983](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/2e36983ef148b185e32912ea60a6d0c8584e2e7a))
+
+## [0.4.6](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-project-setup/0.4.5...solutions/client-project-setup/0.4.6) (2024-02-13)
+
+
+### Bug Fixes
+
+* adding security control tags ([#810](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/issues/810)) ([cb877a4](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/commit/cb877a4f465135677675f5e3b42a73b324e9827b))
+
 ## [0.4.5](https://github.com/GoogleCloudPlatform/pubsec-declarative-toolkit/compare/solutions/client-project-setup/0.4.4...solutions/client-project-setup/0.4.5) (2023-11-16)
 
 

@@ -76,9 +76,10 @@ data:
   # Network Host Project (standard)
   ##########################
   #
-  # the network host project id that will be created
+  # the distinct network host projects that will be created for each classification
   # customization: required
-  host-project-id: net-host-project-12345
+  host-project-id-nonp: net-host-project-nonp-12345
+  host-project-id-pbmm: net-host-project-pbmm-12345
   #
   # Org policy exception to allow vpc peering between a defined list and the host project.
   # The file is located here client-folder/standard/application-infrastructure/host-project/org-policies/exceptions/compute-restrict-vpc-peering-except-host-project.yaml
@@ -90,23 +91,11 @@ data:
   project-allowed-restrict-vpc-peering: |
     - under:projects/PROJECT_ID
   #
-  # nonp IP space, used by ComputeFirewallPolicyRule for network isolation
-  # this list must include all non protected cidr ranges including the ranges for GKE nodes, services and pods
-  standard-nonp-cidr: |
-    - 10.1.0.0/18
-    - 172.16.0.0/13
-  #
   # Subnet IP range for nonp-main in northamerica-northeast1
   standard-nane1-nonp-main-snet: 10.1.0.0/21
   #
   # Subnet IP range for nonp-main in northamerica-northeast2
   standard-nane2-nonp-main-snet: 10.1.8.0/21
-  #
-  # pbmm IP space, used by ComputeFirewallPolicyRule for network isolation
-  # this list must include all pbmm cidr ranges including the ranges for GKE nodes, services and pods
-  standard-pbmm-cidr: |
-    - 10.1.128.0/18
-    - 172.24.0.0/13
   #
   # Subnet IP range for pbmm-main in northamerica-northeast1
   standard-nane1-pbmm-main-snet: 10.1.128.0/21
@@ -170,6 +159,10 @@ data:
   #
   # dns project id created during core-landing-zone package deployment
   # customization: required, obtain value from the core-landing-zone setters.yaml
+  core-dns-project-id: core-dns-project-12345
+  #
+  # dns project id that will be created for this client
+  # customization: required
   dns-project-id: dns-project-12345
   #
   # Clients Landing Zone fqdn. The "dns-name" must end with a "."
@@ -186,6 +179,10 @@ data:
     - "ns-cloud-a3.googledomains.com."
     - "ns-cloud-a4.googledomains.com."
   #
+  ##########################
+  # Labels
+  ##########################
+  # Labels can be set on project using set-labels-project.yaml. Please make sure there is one pair of key-value pair otherwise render will fail
   ##########################
   # End of Configurations
   ##########################

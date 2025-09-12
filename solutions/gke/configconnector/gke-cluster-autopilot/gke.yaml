@@ -13,8 +13,10 @@
 # limitations under the License.
 ######
 # GKE Autopilot Cluster
-# AC-4, SC-7, SC-7(3) - Authorized IP ranges are defined on Kubernetes services
+# AC-4, SC-7 - Authorized IP ranges are defined on Kubernetes services
+# SC-12(2) - The GCP key management is used to generate a symmetric key. This symemetric key is used to encrypt the kubernetes managed instance etcd database.
 # SC-28, SC-28(1) - Protection of ETCD database at rest
+# AU-12 - Enable Logging for GKE
 # https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-shared-vpc
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerCluster
@@ -33,7 +35,7 @@ spec:
     autoProvisioningDefaults:
       serviceAccountRef:
         name: cluster-name-sa # kpt-set: ${cluster-name}-sa
-  # SC-28, SC-28(1)
+  # SC-12(2), SC-28, SC-28(1)
   databaseEncryption:
     keyName: projects/project-id/locations/northamerica-northeast1/keyRings/cluster-name-kmskeyring/cryptoKeys/cluster-name-etcd-key # kpt-set: projects/${project-id}/locations/${location}/keyRings/${cluster-name}-kmskeyring/cryptoKeys/${cluster-name}-etcd-key
     state: ENCRYPTED
@@ -54,6 +56,7 @@ spec:
     clusterSecondaryRangeName: podrange
     servicesSecondaryRangeName: servicesrange
   location: northamerica-northeast1 # kpt-set: ${location}
+  # AU-12
   loggingConfig:
     enableComponents:
       - "SYSTEM_COMPONENTS"
@@ -63,7 +66,7 @@ spec:
     dailyMaintenanceWindow:
       startTime: 05:00
       duration: 04:00
-  # AC-4, SC-7, SC-7(3)
+  # AC-4, SC-7
   masterAuthorizedNetworksConfig:
     cidrBlocks: # kpt-set: ${master-authorized-networks-cidr}
       - cidrBlock: 10.1.1.5/32
@@ -72,7 +75,7 @@ spec:
     enableComponents:
       - "SYSTEM_COMPONENTS"
   networkRef:
-    name: host-project-vpc # kpt-set: ${host-project-vpc}
+    name: host-project-id-global-network-connectivity-profile-vpc # kpt-set: ${host-project-id}-global-${network-connectivity-profile}-vpc
     namespace: client-name-networking # kpt-set: ${client-name}-networking
   networkingMode: VPC_NATIVE
   nodePoolAutoConfig:
@@ -100,3 +103,6 @@ spec:
     name: project-id-cluster-name-snet # kpt-set: ${project-id}-${cluster-name}-snet
   verticalPodAutoscaling:
     enabled: true
+  # Enable google group for rbac authentication in GKE
+  authenticatorGroupsConfig:
+    securityGroup: gke-security-groups@yourdomain.com # kpt-set: ${security-group}
